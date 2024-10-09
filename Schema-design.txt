@@ -1,0 +1,26 @@
+Schema Summary
+
+Here’s a summary of the models:
+
+    CustomUser: Extends Django’s built-in user model to allow for additional user-specific fields if needed. [optional]
+
+    BlogPost:
+        title: Title of the blog post.
+        content: Main content of the post.
+        author: Foreign key to the user who created the post.
+        created_at: Timestamp for when the post was created.
+        updated_at: Timestamp for when the post was last updated.
+        published: Boolean flag to indicate if the post is published.
+        tags: Many-to-many relationship with the Tag model.
+
+    Comment:
+        post: Foreign key to the BlogPost that this comment belongs to.
+        author: Foreign key to the user who made the comment.
+        content: Main content of the comment.
+        created_at: Timestamp for when the comment was created.
+        updated_at: Timestamp for when the comment was last updated.
+        likes: Count of likes for the comment.
+
+    Tag:
+        name: Name of the tag, unique for each tag.
+
